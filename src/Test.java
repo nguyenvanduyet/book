@@ -2,6 +2,8 @@ import LibraryBook.Book;
 import LibraryBook.FictionBook;
 import LibraryBook.ProgrammingBook;
 
+import javax.naming.Name;
+import javax.xml.bind.PrintConversionEvent;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -20,29 +22,24 @@ public class Test {
         fictionBooks[2] = new FictionBook(8, "Hoàn", 80.000, "Anh", "kinh dị");
         fictionBooks[3] = new FictionBook(7, "Thanh", 100.000, "Anh", "chiến tranh");
         fictionBooks[4] = new FictionBook(6, "Khải", 90.000, "Anh", "võ thuật");
-        Book[] Books=new Book[10];
-        for (int i = 0; i < 5; i++) {
-            Books[i] =programmingBooks[i];
+        int sum1=0;
+        for (ProgrammingBook P:
+             programmingBooks){
+            sum1 +=P.getPrice();
         }
-        for (int i = 0; i < 5; i++) {
-            Books[i + 5] =fictionBooks[i];
+        int sum2=0;
+        for (FictionBook F:
+             fictionBooks) {
+            sum2 +=F.getPrice();
         }
-        System.out.print(Arrays.deepToString(Books));
-        int sum=0;
-        for (Book b:
-             Books) {
-            sum+=b.getPrice();
-
-        }
+        int sum =sum1+sum2;
         System.out.println(sum);
         Scanner scanner = new Scanner(System.in);
-        System.out.println("nhập tên sách cần timg giá");
-        for (int i = 0; i < Books.length; i++) {
+        System.out.println("nhập tên sách cần tìm giá");
+        String name=scanner.nextLine();
+        if (name==programmingBooks.)
 
         }
-
-
-    }
 
 }
 
