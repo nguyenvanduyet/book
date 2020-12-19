@@ -22,23 +22,38 @@ public class Test {
         fictionBooks[2] = new FictionBook(8, "Hoàn", 80.000, "Anh", "kinh dị");
         fictionBooks[3] = new FictionBook(7, "Thanh", 100.000, "Anh", "chiến tranh");
         fictionBooks[4] = new FictionBook(6, "Khải", 90.000, "Anh", "võ thuật");
-        int sum1=0;
+        int count=0;
         for (ProgrammingBook P:
-             programmingBooks){
-            sum1 +=P.getPrice();
+             programmingBooks) {
+            if (P.getLanguage()=="java"){
+                count++;
+            }
         }
-        int sum2=0;
-        for (FictionBook F:
-             fictionBooks) {
-            sum2 +=F.getPrice();
+        System.out.println("số sách có ngôn ngữ java là:"+ count);
+        Book[] books=new Book[10];
+        for (int i = 0; i < 5; i++) {
+            books[i]=programmingBooks[i];
         }
-        int sum =sum1+sum2;
-        System.out.println(sum);
+        for (int i = 0; i < 5; i++) {
+            books[i+5]=fictionBooks[i];
+        }
+        int sum=0;
+        for (Book book:
+                books) {
+            sum +=book.getPrice();
+            
+        }
+        System.out.println("tổng giá của 10 cuốn sách là:"+sum);
         Scanner scanner = new Scanner(System.in);
         System.out.println("nhập tên sách cần tìm giá");
         String name=scanner.nextLine();
-        if (name==programmingBooks.)
-
+        for (Book N:
+            books){
+            if (name.equals(N.getName())){
+                System.out.println("giá sách là :"+N.getPrice());
+                break;
+            }
+            }
         }
 
 }
